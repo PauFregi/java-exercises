@@ -24,20 +24,6 @@ calculated by summing exactly four of the five integers.
  */
 
 public class MinMaxSum {
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int[] arr = new int[5];
-        for(int arr_i=0; arr_i < 5; arr_i++){
-            arr[arr_i] = in.nextInt();
-        }
-
-        long min = minSum(arr);
-        long max = maxSum(arr);
-
-        System.out.println(min + " " + max);
-    }
-
     public static long maxSum(int[] arr) {
         return Arrays.stream(arr)
                 .sorted()

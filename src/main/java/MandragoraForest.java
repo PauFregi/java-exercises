@@ -35,6 +35,11 @@ For each test case, print a single line with an integer denoting the maximum num
  */
 
 public class MandragoraForest {
+    public static long journey(long[] mandragora){
+        long maxHP = Arrays.stream(mandragora).sum();
+        return journey(mandragora, maxHP);
+    }
+
     public static long journey(long[] mandragora, long mandragoraHP){
         int s = 1;
 
@@ -57,25 +62,5 @@ public class MandragoraForest {
             i++;
         } while(i < mandragora.length && !found);
         return maxExp;
-    }
-
-    public static void main(String args[] ) throws Exception {
-        Scanner in = new Scanner(System.in);
-        int cases = in.nextInt();
-        long[] results = new long[cases];
-        for(int test=0; test<cases; test++){
-            int numMandragora = in.nextInt();
-            long[] mandragora = new long[numMandragora];
-            long mandragoraHP = 0;
-            for(int i=0; i<numMandragora; i++) {
-                mandragora[i] = in.nextLong();
-                mandragoraHP += mandragora[i];
-            }
-            results[test] = journey(mandragora, mandragoraHP);
-        }
-
-        for(long result : results) {
-            System.out.println(result);
-        }
     }
 }

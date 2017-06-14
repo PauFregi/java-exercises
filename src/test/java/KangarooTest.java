@@ -3,8 +3,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class KangarooTest {
-
-
     @Test
     public void yep() throws Exception {
         int x1 = 0;
